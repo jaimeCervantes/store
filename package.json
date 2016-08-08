@@ -1,0 +1,36 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "Very simple e-commerce sytem to sell my clothes and practice MEAN stack, beside learning angular material design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaimeCervantes/store.git"
+  },
+  "keywords": [
+    "MEAN",
+    "angular",
+    "material",
+    "design",
+    "expressjs",
+    "mongodb",
+    "node.js"
+  ],
+  "author": "Jaime Cervantes Velasco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaimeCervantes/store/issues"
+  },
+  "homepage": "https://github.com/jaimeCervantes/store#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.8",
+    "morgan": "^1.7.0",
+    "underscore": "^1.8.3",
+    "wagner-core": "^0.2.0"
+  }
+}

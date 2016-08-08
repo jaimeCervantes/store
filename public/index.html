@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>Store</title>
+	<link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+	<style type="text/css">
+        /* Hide when Angular is not yet loaded and initialized */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+</head>
+<body ng-app="Store" ng-controller="mainCtrl" layout="column" ng-cloak>
+	
+	<md-toolbar layout="row">
+		<md-button hide-gt-sm aria-label="Show menu bar">
+		</md-button>
+		<h1>Store clothes</h1>
+	</md-toolbar>
+
+	<div flex layout="row">
+		
+		<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+			<md-list>
+				<md-list-item>
+					<md-button>
+					 One button
+					</md-button>
+				</md-list-item>
+			</md-list>
+		</md-sidenav>
+
+		<md-content flex id="content" class="md-padding" layout-xs="column" layout="row">
+		<div flex-xs flex-gt-xs="50" layout="column">
+				<md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">In-card mixed actions</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-card-icon-actions>
+            <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>
+          </md-card-icon-actions>
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+      </md-card>
+		</div>
+		<div flex-xs flex-gt-xs="50" layout="column">
+			<md-card>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">In-card mixed actions</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-card-icon-actions>
+            <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>
+          </md-card-icon-actions>
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+       </md-card>
+			</div>
+		</md-content>
+	
+	</div>
+
+	<script src="/node_modules/angular/angular.js"></script> 
+  <script src="/node_modules/angular-aria/angular-aria.js"></script> 
+  <script src="/node_modules/angular-animate/angular-animate.js"></script> 
+  <script src="/node_modules/angular-material/angular-material.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
