@@ -14,6 +14,18 @@ app.use(require('morgan')('dev'));
 
 app.use( express.static( path.resolve( __dirname, 'public') ) );
 
+app.get('/products', wagner.invoke(function(Product){
+		return function(req, res){
+			Product.find({}).exec(function(error, docs){
+				if(error){
+					console.log(error);
+					res.json(error);
+				}
+				res.json(docs);
+			});
+		};
+	}) );
+
 app.listen(app.get('port'), function(){
 	console.log('Web server listening on port: ' + app.get('port') );
 });

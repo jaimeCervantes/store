@@ -13,7 +13,7 @@ var productSchema = {
 			enum: ['MXN', 'USD', 'EUR']
 		}
 	},
-	pictures: [{type: String, required: true, match: /^(https|http):\/\//i}],
+	pictures: [{type: String, required: true}],
 	category: Category.categorySchema
 };
 

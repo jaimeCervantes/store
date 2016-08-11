@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 
 var categorySchema = {
 	_id: {type: String, required: true},
-	name: { type: String, required: true },
+	name: { type: String },
+	description: {type: String},
 	parent: {type: String, ref: 'Category'},
 	ancestors: [{type: String, ref: 'Category'}]
 };
