@@ -47,5 +47,5 @@ db
 Thumbs.db
 
 #sublime files
-.sublime-workspace
-.sublime-project
+*.sublime-workspace
+*.sublime-project
