@@ -3,7 +3,7 @@
 ng.module('Store', ['ngMaterial'])
 
 .config(['$controllerProvider', function($controllerProvider){
-	$controllerProvider.register('mainCtrl', ['$scope', '$http', function($scope, $http){
+	$controllerProvider.register('mainCtrl', ['$scope', '$http', '$mdSidenav', function($scope, $http, $mdSidenav){
 		$scope.products = [];
 		$scope.loading = {
 			products: true
@@ -12,6 +12,14 @@ ng.module('Store', ['ngMaterial'])
 		$scope.errors = {
 			products: false
 		};
+
+		$scope.toggleLeft = buildToggler('left');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
 		$http.get('/products')
 					.then(function(response){
@@ -26,7 +34,9 @@ ng.module('Store', ['ngMaterial'])
 }])
 
 .config(['$mdThemingProvider', '$mdIconProvider', function($mdThemingProvider, $mdIconProvider){
-
+	$mdThemingProvider.theme('default')
+		.primaryPalette('pink')
+		.accentPalette('blue');
 }]);
 
 })(angular);

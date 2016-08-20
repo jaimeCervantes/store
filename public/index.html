@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<title>Store</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
 	<link rel="stylesheet" href="/css/app.css">
 	<style type="text/css">
@@ -14,24 +15,40 @@
         }
     </style>
 </head>
-<body ng-app="Store" ng-controller="mainCtrl" layout="column">
+<body ng-app="Store" ng-controller="mainCtrl">
 	
 	<md-toolbar layout="row" ng-cloak>
 		<div class="md-toolbar-tools">
-			<md-button hide-gt-sm aria-label="Show menu bar" class="md-fab-button md-mini">
-				<md-icon md-svg-src="./node_modules/material-design-icons/action/svg/production/ic_view_headline_24px.svg" ></md-icon>
+			<md-button ng-click="toggleLeft()" aria-label="Show menu bar" class="md-fab-button md-mini">
+				<md-icon>menu</md-icon>
 			</md-button>
 			<span>Store clothes</div>
 		</span>
 	</md-toolbar>
+
+  <md-sidenav flex class="md-sidenav-left" md-component-id="left" md-whiteframe="4" ng-cloak>
+      <md-toolbar  layout="row">
+        <h1 class="md-toolbar-tools">Categor&iacute;as</h1>
+        <md-button ng-click="toggleLeft()" class="md-icon-button">
+          <md-icon>close</md-icon>
+        </md-button>
+      </md-toolbar>
+      <md-content>
+      <md-list>
+        <md-list-item ng-repeat="item in [{name:'Playeras'}, {name: 'Leggins'}, {name: 'chamarras'} ]" ng-click="null">
+          {{item.name}}
+        </md-list-item>
+      </md-list>
+      </md-content>
+  </md-sidenav>
   
-  <div flex layout="column" >
+  <div layout="column" >
     <div layout="column" ng-show="loading.products" layout-align="center center">
       <md-progress-linear md-mode="indeterminate" ></md-progress-linear>
       <md-progress-circular md-mode="indeterminate" md-diameter="200"></md-progress-circular>
     </div>
-		<md-content flex id="content" class="md-padding" layout-xs="column" layout="row" ng-show="loading.products===false" ng-cloak>    
-  		<div flex-sm="33" flex-md="25" flex-lg="20" flex-xl="15" flex-gt ng-repeat="prod in products" >
+		<md-content flex id="content" class="md-padding" layout="row" layout-xs="column" ng-show="loading.products===false" ng-cloak>
+  		<div flex-xs="50" flex-gt-xs="33" flex-gt-sm="25" flex-gt-md="20" flex-gt-lg="15" ng-repeat="prod in products" >
         <md-card >
           <img ng-src="{{prod.pictures[0].split('.')[0] + '-min.png'}}" class="md-card-image" alt="{{prod.name}}"
           <md-card-title>
@@ -43,21 +60,32 @@
             <p ng-bind="prod.description"></p>
           </md-card-content>
           <md-card-actions layout="row" layout-align="start center">
-            <md-button class="md-icon-button" aria-label="Favorite">
-              <md-icon md-svg-src="./node_modules/material-design-icons/action/svg/production/ic_view_headline_24px.svg"></md-icon>
+            <md-button class="md-icon-button md-accent" aria-label="Add to shopping cart" ng-click="null">
+              <md-icon>add_shopping_cart</md-icon>
+              <md-tooltip>Agregar al carrito de compras</md-tooltip>
             </md-button>
-            <md-button class="md-icon-button" aria-label="Settings">
-              <md-icon md-svg-src="./node_modules/material-design-icons/action/svg/production/ic_view_headline_24px.svg"></md-icon>
+            <md-button class="md-icon-button md-accent" aria-label="Details" ng-click="null">
+              <md-icon>subject</md-icon>
+              <md-tooltip>Ver producto</md-tooltip>
             </md-button>
-            <md-button class="md-icon-button" aria-label="Share">
-              <md-icon md-svg-src="./node_modules/material-design-icons/action/svg/production/ic_view_headline_24px.svg"></md-icon>
-            </md-button>
+            <md-menu>
+              <md-button class="md-icon-button md-accent" aria-label="Share" ng-click="$mdOpenMenu($event)">
+                <md-icon>share</md-icon>
+                <md-tooltip>Compartir</md-tooltip>
+              </md-button>
+              <md-menu-content>
+                <md-menu-item ng-repeat="sn in ['Facebook', 'Email', 'Twitter']">
+                  <md-button>
+                    {{sn}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
           </md-card-actions>
         </md-card>
   		</div>
 		</md-content>
-  </div>
-	
+  </div> 	
 
 	<script src="/node_modules/angular/angular.js"></script> 
   <script src="/node_modules/angular-aria/angular-aria.js"></script> 
