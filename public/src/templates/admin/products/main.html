@@ -1,0 +1,26 @@
+
+<div layout="row">
+	<div>
+		<h2>Productos</h2>
+	</div>
+	<md-button aria-label="Nuevo producto" class="md-fab md-raised md-mini" ng-click="newProduct()">
+	  <md-icon>add</md-icon>
+	  <md-tooltip md-direction="right">Agregar un nuevo producto</md-tooltip>
+	</md-button>
+</div>
+
+<div layout="row" layout-align="end end">
+	<md-fab-speed-dial md-open="false" md-direction="up" class="md-fling">
+	  <md-fab-trigger>
+	    <md-button aria-label="menu" class="md-fab md-warn">
+	      <md-icon>menu</md-icon>
+	    </md-button>
+	  </md-fab-trigger>
+	  <md-fab-actions>
+	    <md-button aria-label="Nuevo producto" class="md-fab md-raised md-mini" ng-click="newProduct()">
+	      <md-icon>add</md-icon>
+	      <md-tooltip md-direction="left">Agregar un nuevo producto</md-tooltip>
+	    </md-button>
+	  </md-fab-actions>
+	</md-fab-speed-dial>
+</div>

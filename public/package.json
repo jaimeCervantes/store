@@ -24,6 +24,15 @@
     "angular-animate": "^1.5.8",
     "angular-aria": "^1.5.8",
     "angular-material": "^1.0.9",
+    "angular-route": "^1.5.8",
     "material-design-icons": "^2.2.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-uglify": "^2.0.0",
+    "webpack": "^1.13.2"
   }
 }
