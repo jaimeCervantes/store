@@ -17,5 +17,14 @@ var productSchema = {
 	category: Category.categorySchema
 };
 
-module.exports = new mongoose.Schema(productSchema);
+var schemaInstance = new mongoose.Schema(productSchema);
+
+schemaInstance.virtual('previewImg').get(function(){
+	return this.pictures[0].split('.')[0] + '-min.png';
+});
+
+schemaInstance.set('toObject', { virtuals: true });
+schemaInstance.set('toJSON', { virtuals: true });
+
+module.exports = schemaInstance
 module.exports.productSchema = productSchema;

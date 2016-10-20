@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="product-item">
+  <template>
+    <style>
+      
+    </style>
+    <paper-card heading="{{product.name}}" image="{{product.previewImg}}" elevation="1" animated-shadow="true">
+      <div class="card-content">{{product.description}}</div>
+      <div class="card-actions">
+        
+      </div>
+    </paper-card>
+  </template>
+  <script>
+    Polymer({
+      is: 'product-item',
+    });
+  </script>
+</dom-module>
